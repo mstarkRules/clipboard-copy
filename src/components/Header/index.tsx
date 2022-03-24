@@ -5,7 +5,7 @@ function Header() {
   return (
     <Container>
       <MenuArea>
-        <a href="/">
+        <a href="">
           <li>Home</li>
         </a>
         <a href="">
