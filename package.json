@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prod": "node server/app"
+    "prod": "node server/app.js",
+    "start": "node server/app.js",
+    "postinstall": "tsc"
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
@@ -14,6 +16,8 @@
     "@mui/material": "^5.5.2",
     "@mui/styled-engine-sc": "^5.5.2",
     "@types/styled-components": "^5.1.24",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.3"
