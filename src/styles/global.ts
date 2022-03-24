@@ -21,6 +21,14 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 400 ;
     }
 
+    h1, h2, h3, h4, h5, strong{
+        font-weight: 600;
+    }
+    a{
+       font-family: 'Poppins', sans-serif;
+       text-decoration: none;
+    }
+
     html{
         @media(max-width: 1080px){
             font-size: 93.75%;

@@ -1,15 +1,17 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, MenuArea } from "./styles";
 
 function Header() {
   return (
     <Container>
-      <a href="">
-        <li>Home</li>
-      </a>
-      <a href="">
-        <li>Sobre</li>
-      </a>
+      <MenuArea>
+        <a href="">
+          <li>Home</li>
+        </a>
+        <a href="">
+          <li>Sobre</li>
+        </a>
+      </MenuArea>
     </Container>
   );
 }

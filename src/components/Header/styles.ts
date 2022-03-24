@@ -9,7 +9,7 @@ export const Container = styled.header`
 
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
 
   a {
@@ -17,4 +17,12 @@ export const Container = styled.header`
     color: #fff;
     font-family: "Poppins", sans-serif;
   }
+`;
+
+export const MenuArea = styled.div`
+  width: 50%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 `;

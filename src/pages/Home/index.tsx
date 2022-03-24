@@ -49,6 +49,15 @@ export function Home() {
         <>
           <p>{link}</p>
           <p>Link gerado e copiado para sua área de transferência</p>
+          <h2>Como funciona?</h2>
+          <p>
+            Cole esse link no lugar onde deseja divulgar (status do Whatsapp,
+            Instagram, etc).
+          </p>
+          <p>
+            Quando o usuário clicar no link gerado, o seu texto será copiado
+            automaticamente para a área de transferência dele.
+          </p>
         </>
       )}
     </Container>
