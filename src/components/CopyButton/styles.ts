@@ -1,6 +1,21 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+export const Container = styled.div`
   width: 140px;
-  height: 60px;
+  padding: 18.5px 14px;
+  background-color: #2172f2;
+  /* border: none; */
+  border-radius: 2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  color: #fff;
+  transition: all ease 0.2s;
+  :hover {
+    filter: brightness(0.9);
+  }
 `;

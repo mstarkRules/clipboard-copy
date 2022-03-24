@@ -1,10 +1,13 @@
 import React from "react";
+import { Container } from "./styles";
 
 interface ButtonProps {
   text: string;
   clipboard?: string;
 }
 
-export function CopyButton(props: ButtonProps) {
-  return <div>{props.text}</div>;
+function CopyButton(props: ButtonProps) {
+  return <Container>{props.text}</Container>;
 }
+
+export default CopyButton;
