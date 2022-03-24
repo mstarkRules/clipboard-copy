@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.footer`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,6 +11,7 @@ export const Container = styled.footer`
 
   line-height: 1.8rem;
   padding: 1rem;
+  margin-top: 10px;
 
   /* transform: skewY(-3deg*/
   /* p {
