@@ -12,6 +12,13 @@ export function Home() {
     setInputValue(text);
   }
 
+  function copyFromUrlToClipboard() {
+    let text = window.location.pathname.split("/");
+    navigator.clipboard.writeText(text[1]);
+  }
+
+  copyFromUrlToClipboard();
+
   function handleSetTextLink(text: string) {
     if (inputValue.length > 0) {
       let host = window.location.host;
