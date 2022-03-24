@@ -21,10 +21,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/success" component={SuccessPage} />
-          <Route path="/*">
-            <Redirect to="/success" />
-          </Route>
+          <Route path="*" component={SuccessPage} />
         </Switch>
 
         <GlobalStyle />
