@@ -59,10 +59,6 @@ export function Home() {
             Quando o usuário clicar no link gerado, o seu texto será copiado
             automaticamente para a área de transferência dele.
           </p>
-          <p>
-            <strong>Obs: </strong> evite caracteres como <strong> ´,^,</strong>{" "}
-            ou <strong>~</strong>
-          </p>
         </TextArea>
 
         <MainArea>

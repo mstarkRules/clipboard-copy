@@ -3,10 +3,10 @@ import { Container } from "./styles";
 
 function copyFromUrlToClipboard() {
   let text = window.location.pathname.split("/");
-  navigator.clipboard.writeText(text[1].replaceAll("%20", " "));
+  let decodedUri = decodeURIComponent(text[1]);
+  navigator.clipboard.writeText(decodedUri);
 
-  console.log("rtexttt: ", text[1]);
-  return text[1].replaceAll("%20", " ");
+  return decodeURIComponent(text[1]);
 }
 
 export function SuccessPage() {
