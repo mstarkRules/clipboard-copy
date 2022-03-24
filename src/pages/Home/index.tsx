@@ -50,44 +50,43 @@ export function Home() {
 
   return (
     <Container>
-      <>
-        <TextArea title="how it works">
-          <h2>Como funciona?</h2>
-          <p>
-            Gere um link abaixo, cole no lugar onde deseja divulgar (status do
-            Whatsapp, Instagram, etc).
-          </p>
-          <p>
-            Quando o usuário clicar no link gerado, o seu texto será copiado
-            automaticamente para a área de transferência dele.
-          </p>
-        </TextArea>
+      <TextArea title="how it works">
+        <h2>Como funciona?</h2>
+        <p>
+          Gere um link abaixo, cole no lugar onde deseja divulgar (status do
+          Whatsapp, Instagram, etc).
+        </p>
+        <p>
+          Quando o usuário clicar no link gerado, o seu texto será copiado
+          automaticamente para a área de transferência dele.
+        </p>
+      </TextArea>
 
-        <MainArea>
-          <TextField
-            title="enter the text to be copied"
-            onChange={(e) => handleInputValue(e.target.value)}
-            label="Digite o texto a ser copiado"
-            value={inputValue}
-          />
-          <CopyButton
-            title="Gerar link"
-            text={inputValue}
-            setTextLink={(text) => handleSetTextLink(text)}
-          />
-        </MainArea>
-        {link.length > 0 && (
-          <LinkArea>
-            <p>
-              <strong>{link}</strong>
-              <br />
-              Link gerado e <span>copiado</span> para sua área de transferência!
-              <br />
-              Use-o para compartilhar com os seus usuários.
-            </p>
-          </LinkArea>
-        )}
-      </>
+      <MainArea>
+        <TextField
+          style={{ width: "50%" }}
+          title="enter the text to be copied"
+          onChange={(e) => handleInputValue(e.target.value)}
+          label="Digite o texto a ser copiado"
+          value={inputValue}
+        />
+        <CopyButton
+          title="Gerar link"
+          text={inputValue}
+          setTextLink={(text) => handleSetTextLink(text)}
+        />
+      </MainArea>
+      {link.length > 0 && (
+        <LinkArea>
+          <p>
+            <strong>{link}</strong>
+            <br />
+            Link gerado e <span>copiado</span> para sua área de transferência!
+            <br />
+            Use-o para compartilhar com os seus usuários.
+          </p>
+        </LinkArea>
+      )}
     </Container>
   );
 }

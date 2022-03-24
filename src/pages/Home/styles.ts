@@ -10,16 +10,8 @@ export const Container = styled.div`
   min-height: calc(100vh - 120px);
 `;
 
-export const MainArea = styled.div`
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-`;
-
 export const TextArea = styled.div`
+  overflow-wrap: break-word;
   width: 80%;
 
   p {
@@ -32,14 +24,28 @@ export const TextArea = styled.div`
   }
 `;
 
+export const MainArea = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+`;
+
 export const LinkArea = styled.div`
-  max-width: 80%;
-  strong {
-    word-wrap: break-word;
-  }
+  overflow-wrap: break-word;
+
+  width: 80%;
 
   p {
-    text-align: center;
+    text-align: left;
+    word-wrap: break-word;
+
+    strong {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
     span {
       color: #2ba84c;
       font-weight: bold;
