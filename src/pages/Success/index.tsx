@@ -3,12 +3,11 @@ import { Container } from "./styles";
 
 function copyFromUrlToClipboard() {
   let text = window.location.pathname.split("/");
-  navigator.clipboard.writeText(text[1]);
+  navigator.clipboard.writeText(text[1].replaceAll("%20", " "));
 
   console.log("rtexttt: ", text[1]);
-  return text[1];
+  return text[1].replaceAll("%20", " ");
 }
-// copyFromUrlToClipboard();
 
 export function SuccessPage() {
   // useEffect(() => {
