@@ -8,6 +8,6 @@ app.use(express.static("dist"));
 
 app.get("*", (req, res) => res.sendFile(path.resolve("dist", "index.html")));
 
-app.listen(PORT, "0.0.0.0", function () {
+app.listen(PORT, function () {
   console.log("Servidor iniciado na porta", PORT);
 });
