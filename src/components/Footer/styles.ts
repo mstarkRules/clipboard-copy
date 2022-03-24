@@ -21,4 +21,11 @@ export const Container = styled.footer`
     text-decoration: none;
     color: white;
   }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 `;

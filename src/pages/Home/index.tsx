@@ -31,7 +31,11 @@ export function Home() {
   const handleSetTextLink = async (text: string) => {
     if (inputValue.length > 0) {
       let host = window.location.host;
-      let linkGenerated = "https://" + host + "/" + encodeURIComponent(text);
+      let linkGenerated =
+        "Clique no link para copiar o texto: https://" +
+        host +
+        "/" +
+        encodeURIComponent(text);
 
       try {
         console.log("texastoss do link: ", linkGenerated);
