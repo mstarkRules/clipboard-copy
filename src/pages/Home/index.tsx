@@ -28,19 +28,23 @@ export function Home() {
     return false;
   }
 
-  async function handleSetTextLink(text: string) {
+  const handleSetTextLink = async (text: string) => {
     if (inputValue.length > 0) {
       let host = window.location.host;
       let linkGenerated = host + "/" + text;
 
-      navigator.clipboard.writeText(linkGenerated);
-      setLink(linkGenerated);
-
-      console.log("texto do link: ", linkGenerated);
+      try {
+        console.log("texastoss do link: ", linkGenerated);
+        await navigator.clipboard.writeText(linkGenerated);
+        setLink(linkGenerated);
+        // console.log("adads do link: ", testando);
+      } catch (error) {
+        console.log("erro ao copiar: ", error);
+      }
     } else {
       alert("Digite algum texto");
     }
-  }
+  };
 
   return (
     <Container>

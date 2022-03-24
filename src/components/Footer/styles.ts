@@ -8,7 +8,7 @@ export const Container = styled.footer`
 
   background-color: #2172f2;
   /* border-top-right-radius: 100px; */
-  margin-top: -3rem;
+
   line-height: 1.8rem;
   padding: 1rem;
 
