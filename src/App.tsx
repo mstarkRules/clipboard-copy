@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { CopyButton } from "./components/CopyButton";
+import { Home } from "./pages/Home";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,9 +13,7 @@ function App() {
     alert("texto " + text + " copiado!");
   }
 
-  copyClipboard();
-
-  return <CopyButton text="Copiar" />;
+  return <Home />;
 }
 
 export default App;
