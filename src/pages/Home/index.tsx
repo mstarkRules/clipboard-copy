@@ -52,8 +52,8 @@ export function Home() {
           <TextArea>
             <h2>Como funciona?</h2>
             <p>
-              Cole esse link no lugar onde deseja divulgar (status do Whatsapp,
-              Instagram, etc).
+              Escreva um texto, gere um link e cole no lugar onde deseja
+              divulgar (status do Whatsapp, Instagram, etc).
             </p>
             <p>
               Quando o usuário clicar no link gerado, o seu texto será copiado
