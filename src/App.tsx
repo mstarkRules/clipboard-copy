@@ -21,7 +21,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route component={SuccessPage} />
+          <Route path="*" component={SuccessPage} />
         </Switch>
 
         <GlobalStyle />
