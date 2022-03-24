@@ -6,8 +6,12 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
 
-  gap: 10px;
-  height: 100vh;
+  gap: 50px;
+  height: calc(100vh - 120px);
+
+  p {
+    text-align: center;
+  }
 `;
 
 export const MainArea = styled.div`
@@ -17,4 +21,14 @@ export const MainArea = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
+`;
+
+export const TextArea = styled.div`
+  max-width: 80%;
+
+  p {
+    text-align: left;
+  }
+
+  /* background-color: red; */
 `;

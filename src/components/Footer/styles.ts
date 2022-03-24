@@ -6,8 +6,8 @@ export const Container = styled.footer`
   justify-content: center;
   align-items: center;
 
-  /* background-color: blue; */
-  border-top-right-radius: 100px;
+  background-color: #2172f2;
+  /* border-top-right-radius: 100px; */
   margin-top: -3rem;
   line-height: 1.8rem;
   padding: 1rem;
