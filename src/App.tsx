@@ -21,7 +21,8 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="*" component={SuccessPage} />
+
+          <Route path="/success" component={SuccessPage} />
         </Switch>
 
         <GlobalStyle />

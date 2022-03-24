@@ -1,5 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/src/pages/Success/index.tsx" }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/success" }]
 }
