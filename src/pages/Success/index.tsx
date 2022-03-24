@@ -1,8 +1,13 @@
 import React from "react";
 import { Container } from "./styles";
 
-function SuccessPage() {
-  return <Container>Copiado com sucesso!</Container>;
+async function copyFromUrlToClipboard() {
+  let text = window.location.pathname.split("/");
+  navigator.clipboard.writeText(text[1]);
 }
 
-export default SuccessPage;
+copyFromUrlToClipboard();
+
+export function SuccessPage() {
+  return <Container>Copiado com sucesso!</Container>;
+}
