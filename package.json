@@ -7,8 +7,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prod": "node server/app.js",
-    "start": "node server/app.js",
-    "postinstall": "tsc"
+    "start": "node server/app.js"
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
