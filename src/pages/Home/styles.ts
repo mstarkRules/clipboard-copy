@@ -7,11 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   gap: 50px;
-  height: calc(100vh - 120px);
-
-  p {
-    text-align: center;
-  }
+  min-height: calc(100vh - 120px);
 `;
 
 export const MainArea = styled.div`
@@ -24,11 +20,29 @@ export const MainArea = styled.div`
 `;
 
 export const TextArea = styled.div`
-  max-width: 80%;
+  width: 80%;
 
   p {
     text-align: left;
+    line-height: 30px;
+    strong: {
+      text-align: center;
+      flex-wrap: wrap;
+    }
+  }
+`;
+
+export const LinkArea = styled.div`
+  max-width: 80%;
+  strong {
+    word-wrap: break-word;
   }
 
-  /* background-color: red; */
+  p {
+    text-align: center;
+    span {
+      color: #2ba84c;
+      font-weight: bold;
+    }
+  }
 `;

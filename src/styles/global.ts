@@ -38,4 +38,8 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 87.5%;
         }
     }
+
+    html{scroll-behavior: smooth}
+
+
 `;

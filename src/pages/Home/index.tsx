@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { TextField } from "@mui/material";
-import { Container, MainArea, TextArea } from "./styles";
+import { Container, LinkArea, MainArea, TextArea } from "./styles";
 import CopyButton from "../../components/CopyButton";
 
 export function Home() {
@@ -36,12 +36,10 @@ export function Home() {
         host +
         "/" +
         encodeURIComponent(text);
-
+      let linkWithoutInfo = "https://" + host + "/" + encodeURIComponent(text);
       try {
-        console.log("texastoss do link: ", linkGenerated);
         await navigator.clipboard.writeText(linkGenerated);
-        setLink(linkGenerated);
-        // console.log("adads do link: ", testando);
+        setLink(linkWithoutInfo);
       } catch (error) {
         console.log("erro ao copiar: ", error);
       }
@@ -53,7 +51,7 @@ export function Home() {
   return (
     <Container>
       <>
-        <TextArea>
+        <TextArea title="how it works">
           <h2>Como funciona?</h2>
           <p>
             Gere um link abaixo, cole no lugar onde deseja divulgar (status do
@@ -67,6 +65,7 @@ export function Home() {
 
         <MainArea>
           <TextField
+            title="enter the text to be copied"
             onChange={(e) => handleInputValue(e.target.value)}
             label="Digite o texto a ser copiado"
             value={inputValue}
@@ -78,13 +77,15 @@ export function Home() {
           />
         </MainArea>
         {link.length > 0 && (
-          <>
+          <LinkArea>
             <p>
               <strong>{link}</strong>
               <br />
-              Link gerado e copiado para sua área de transferência
+              Link gerado e <span>copiado</span> para sua área de transferência!
+              <br />
+              Use-o para compartilhar com os seus usuários.
             </p>
-          </>
+          </LinkArea>
         )}
       </>
     </Container>

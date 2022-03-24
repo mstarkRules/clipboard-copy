@@ -8,8 +8,13 @@ interface WrapperProps {
   padding?: boolean | string;
   color?: string;
   strong?: boolean;
+  title?: string;
 }
 
 export const Wrapper = ({ children, ...props }: WrapperProps) => {
-  return <Container {...props}>{children}</Container>;
+  return (
+    <Container {...props} title={props.title}>
+      {children}
+    </Container>
+  );
 };

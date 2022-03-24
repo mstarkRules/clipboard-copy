@@ -5,11 +5,11 @@ function Header() {
   return (
     <Container>
       <MenuArea>
-        <a href="/">
+        <a href="/" title="go to home page">
           <li>Home</li>
         </a>
-        <a href="">
-          <li>Sobre</li>
+        <a href="#contact" title="go to contact section">
+          <li>Contato</li>
         </a>
       </MenuArea>
     </Container>

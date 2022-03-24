@@ -5,8 +5,8 @@ import { SocialItem } from "../SocialItem";
 export function Footer() {
   return (
     <Container>
-      <div>
-        <Wrapper color="white">
+      <div id="contact">
+        <Wrapper color="white" title="send email to dev">
           <a href="mailto:markstm10@gmail.com">markstm10@gmail.com</a>
         </Wrapper>
         <SocialItem

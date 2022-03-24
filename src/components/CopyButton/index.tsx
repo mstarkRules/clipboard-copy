@@ -11,7 +11,10 @@ interface ButtonProps {
 
 function CopyButton(props: ButtonProps) {
   return (
-    <Container onClick={(text) => props.setTextLink(props.text)}>
+    <Container
+      onClick={(text) => props.setTextLink(props.text)}
+      title="generate link"
+    >
       {props.title}
     </Container>
   );
