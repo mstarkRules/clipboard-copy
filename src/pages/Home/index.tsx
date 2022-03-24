@@ -31,7 +31,7 @@ export function Home() {
   const handleSetTextLink = async (text: string) => {
     if (inputValue.length > 0) {
       let host = window.location.host;
-      let linkGenerated = host + "/" + text;
+      let linkGenerated = "https://" + host + "/" + text;
 
       try {
         console.log("texastoss do link: ", linkGenerated);
