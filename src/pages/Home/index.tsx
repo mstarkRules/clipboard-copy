@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 import { Container, MainArea, MainContainer, TextArea } from "./styles";
 import CopyButton from "../../components/CopyButton";
 import SuccessPage from "../Success";
-import { decodeText } from "../../lib/utils";
+import { decodeText, getUrlParam } from "../../lib/utils";
 
 export function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -16,9 +16,9 @@ export function Home() {
 
   useEffect(() => {
     async function copyFromUrlToClipboard() {
-      let text = window.location.pathname.split("/");
+      const textFromUrl = getUrlParam("text");
 
-      const decodedText = decodeText(text[1]);
+      const decodedText = decodeText(textFromUrl as string);
 
       navigator.clipboard.writeText(decodedText);
     }
@@ -27,23 +27,40 @@ export function Home() {
   }, []);
 
   function verifyUrl() {
-    let url = window.location.pathname.split("/");
-
-    if (url[1].length > 0) {
+    let hasTextParam = getUrlParam("text");
+    if (hasTextParam) {
       return true;
     }
+
     return false;
+  }
+
+  function setUrlQueryParam(paramKey: string, paramValue: string) {
+    let url = new URL(window.location.href);
+    url.searchParams.set(paramKey, paramValue);
+
+    window.history.pushState({}, "", url);
+  }
+
+  function buildUrlAndParams(url: string, params: any) {
+    let urlParams = new URLSearchParams();
+
+    Object.keys(params).forEach((key) => {
+      urlParams.append(key, params[key]);
+    });
+
+    return `${url}?${urlParams.toString()}`;
   }
 
   async function handleSetTextLink(text: string) {
     if (inputValue.length > 0) {
       let host = window.location.host;
-      let linkGenerated = host + "/" + text;
 
-      await navigator.clipboard.writeText(linkGenerated);
-      setLink(linkGenerated);
+      const buildedUrl = buildUrlAndParams(host, { text: text });
+      console.log("url geradaaa: ", buildedUrl);
 
-      console.log("texto do link: ", linkGenerated);
+      await navigator.clipboard.writeText(buildedUrl);
+      setLink(buildedUrl);
     } else {
       alert("Digite algum texto");
     }
