@@ -25,7 +25,7 @@ function SuccessPage() {
       <MainContainer>
         "{getText()}" Copiado com sucesso!
         <Button onClick={handleGoToHome} title="Gerar novo texto">
-          Gerar novo texto
+          Gerar novo texto para compartilhar
         </Button>
       </MainContainer>
     </Container>

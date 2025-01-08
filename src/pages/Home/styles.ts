@@ -14,17 +14,33 @@ export const Container = styled.div`
   }
 `;
 
+export const MainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 980px;
+
+  /* mobile */
+  @media (max-width: 980px) {
+    width: 100%;
+    padding: 0 10px;
+  }
+`;
+
 export const MainArea = styled.div`
   width: 80%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  background-color: red;
 `;
 
 export const TextArea = styled.div`
-  max-width: 80%;
+  width: 100%;
 
   p {
     text-align: left;
