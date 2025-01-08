@@ -22,6 +22,7 @@ function SuccessPage() {
         <div
           style={{
             textAlign: "center",
+            paddingBottom: "4px",
           }}
         >
           "{getText()}" Copiado com{" "}
