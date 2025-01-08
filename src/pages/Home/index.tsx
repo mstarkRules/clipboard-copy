@@ -17,6 +17,7 @@ export function Home() {
   useEffect(() => {
     async function copyFromUrlToClipboard() {
       const textFromUrl = getUrlParam("text");
+      if (!textFromUrl) return;
 
       const decodedText = decodeText(textFromUrl as string);
 
@@ -33,13 +34,6 @@ export function Home() {
     }
 
     return false;
-  }
-
-  function setUrlQueryParam(paramKey: string, paramValue: string) {
-    let url = new URL(window.location.href);
-    url.searchParams.set(paramKey, paramValue);
-
-    window.history.pushState({}, "", url);
   }
 
   function buildUrlAndParams(url: string, params: any) {
