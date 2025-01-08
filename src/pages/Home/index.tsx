@@ -51,7 +51,6 @@ export function Home() {
       let host = window.location.host;
 
       const buildedUrl = buildUrlAndParams(host, { text: text });
-      console.log("url geradaaa: ", buildedUrl);
 
       await navigator.clipboard.writeText(buildedUrl);
       setLink(buildedUrl);

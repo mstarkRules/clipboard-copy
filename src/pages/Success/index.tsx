@@ -19,7 +19,11 @@ function SuccessPage() {
   return (
     <Container>
       <MainContainer>
-        <div>
+        <div
+          style={{
+            textAlign: "center",
+          }}
+        >
           "{getText()}" Copiado com{" "}
           <span
             style={{
