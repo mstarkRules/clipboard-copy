@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { TextField } from "@mui/material";
-import { Container, MainArea, TextArea } from "./styles";
+import { Container, MainArea, MainContainer, TextArea } from "./styles";
 import CopyButton from "../../components/CopyButton";
 import SuccessPage from "../Success";
+import { decodeText } from "../../lib/utils";
 
 export function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -13,12 +14,17 @@ export function Home() {
     setInputValue(text);
   }
 
-  async function copyFromUrlToClipboard() {
-    let text = window.location.pathname.split("/");
-    navigator.clipboard.writeText(text[1]);
-  }
+  useEffect(() => {
+    async function copyFromUrlToClipboard() {
+      let text = window.location.pathname.split("/");
 
-  copyFromUrlToClipboard();
+      const decodedText = decodeText(text[1]);
+
+      navigator.clipboard.writeText(decodedText);
+    }
+
+    copyFromUrlToClipboard();
+  }, []);
 
   function verifyUrl() {
     let url = window.location.pathname.split("/");
@@ -34,7 +40,7 @@ export function Home() {
       let host = window.location.host;
       let linkGenerated = host + "/" + text;
 
-      navigator.clipboard.writeText(linkGenerated);
+      await navigator.clipboard.writeText(linkGenerated);
       setLink(linkGenerated);
 
       console.log("texto do link: ", linkGenerated);
@@ -48,31 +54,34 @@ export function Home() {
       {verifyUrl() ? (
         <SuccessPage />
       ) : (
-        <>
+        <MainContainer>
           <TextArea>
             <h2>Como funciona?</h2>
-            <p>
-              Escreva um texto, gere um link e cole no lugar onde deseja
-              divulgar (status do Whatsapp, Instagram, etc).
-            </p>
-            <p>
-              Quando o usuário clicar no link gerado, o seu texto será copiado
-              automaticamente para a área de transferência dele.
-            </p>
+            <div style={{ paddingBottom: "16px" }}>
+              <p>
+                Escreva um texto, gere um link e cole no lugar onde deseja
+                divulgar (status do Whatsapp, Instagram, etc).
+              </p>
+              <p>
+                Quando o usuário clicar no link gerado, o seu texto será copiado
+                automaticamente para a área de transferência dele.
+              </p>
+            </div>
           </TextArea>
 
-          <MainArea>
-            <TextField
-              onChange={(e) => handleInputValue(e.target.value)}
-              label="Digite o texto a ser copiado"
-              value={inputValue}
-            />
-            <CopyButton
-              title="Gerar link"
-              text={inputValue}
-              setTextLink={(text) => handleSetTextLink(text)}
-            />
-          </MainArea>
+          <TextField
+            onChange={(e) => handleInputValue(e.target.value)}
+            label="Digite o texto a ser copiado"
+            value={inputValue}
+            fullWidth
+            style={{ paddingBottom: "8px" }}
+          />
+          <CopyButton
+            title="Gerar link"
+            text={inputValue}
+            setTextLink={(text) => handleSetTextLink(text)}
+          />
+
           {link.length > 0 && (
             <>
               <p>
@@ -82,7 +91,7 @@ export function Home() {
               </p>
             </>
           )}
-        </>
+        </MainContainer>
       )}
     </Container>
   );
