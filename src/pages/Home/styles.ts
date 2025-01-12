@@ -14,6 +14,22 @@ export const Container = styled.div`
   }
 `;
 
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 20px; */
+  width: 100%;
+`;
+
+export const FormContainer = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+`;
+
 export const MainContainer = styled.div`
   display: flex;
   justify-content: center;

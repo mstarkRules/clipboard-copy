@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
 
 import { TextField } from "@mui/material";
-import { Container, MainArea, MainContainer, TextArea } from "./styles";
-import CopyButton from "../../components/CopyButton";
+import {
+  Container,
+  FormContainer,
+  MainArea,
+  MainContainer,
+  TextArea,
+} from "./styles";
+
 import SuccessPage from "../Success";
 import { decodeText, getUrlParam } from "../../lib/utils";
+import Button from "../../components/Button";
 
 export function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -48,15 +55,22 @@ export function Home() {
 
   async function handleSetTextLink(text: string) {
     if (inputValue.length > 0) {
+      let protocol = window.location.protocol;
       let host = window.location.host;
+      let url = protocol + "//" + host;
 
-      const buildedUrl = buildUrlAndParams(host, { text: text });
+      const buildedUrl = buildUrlAndParams(url, { text: text });
 
       await navigator.clipboard.writeText(buildedUrl);
       setLink(buildedUrl);
     } else {
       alert("Digite algum texto");
     }
+  }
+
+  async function handleSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    await handleSetTextLink(inputValue);
   }
 
   return (
@@ -78,19 +92,18 @@ export function Home() {
               </p>
             </div>
           </TextArea>
-
-          <TextField
-            onChange={(e) => handleInputValue(e.target.value)}
-            label="Digite o texto a ser copiado"
-            value={inputValue}
-            fullWidth
-            style={{ paddingBottom: "8px" }}
-          />
-          <CopyButton
-            title="Gerar link"
-            text={inputValue}
-            setTextLink={(text) => handleSetTextLink(text)}
-          />
+          <FormContainer onSubmit={handleSubmit}>
+            <TextField
+              onChange={(e) => handleInputValue(e.target.value)}
+              label="Digite o texto a ser copiado"
+              value={inputValue}
+              fullWidth
+              style={{ paddingBottom: "8px" }}
+            />
+            <Button title="Gerar link" type="submit">
+              Gerar link
+            </Button>
+          </FormContainer>
 
           {link.length > 0 && (
             <>
