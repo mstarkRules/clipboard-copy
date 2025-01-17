@@ -25,7 +25,9 @@ function SuccessPage() {
             paddingBottom: "4px",
           }}
         >
-          "{getText()}" Copiado com{" "}
+          <i>"{getText()}"</i>
+          &nbsp;
+          <span>Copiado para sua área de transferência com </span>
           <span
             style={{
               backgroundColor: "#57ae31",
