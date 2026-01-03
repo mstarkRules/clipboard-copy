@@ -6,11 +6,17 @@ interface ButtonProps {
   onClick?: () => void;
   children?: React.ReactNode;
   type?: "button" | "submit" | "reset";
+  variant?: "primary" | "secondary";
 }
 
 function Button(props: ButtonProps) {
   return (
-    <ButtonContainer title={props.title} onClick={props.onClick} {...props}>
+    <ButtonContainer 
+      title={props.title} 
+      onClick={props.onClick} 
+      variant={props.variant || "primary"}
+      type={props.type}
+    >
       {props.children}
     </ButtonContainer>
   );

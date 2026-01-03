@@ -22,16 +22,8 @@ export function Home() {
   }
 
   useEffect(() => {
-    async function copyFromUrlToClipboard() {
-      const textFromUrl = getUrlParam("text");
-      if (!textFromUrl) return;
-
-      const decodedText = decodeText(textFromUrl as string);
-
-      navigator.clipboard.writeText(decodedText);
-    }
-
-    copyFromUrlToClipboard();
+    // Removido: cópia automática não funciona no Safari/iOS
+    // A cópia será feita na página Success com interação do usuário
   }, []);
 
   function verifyUrl() {
